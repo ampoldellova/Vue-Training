@@ -3,8 +3,6 @@ import { Vue3Lottie } from "vue3-lottie";
 import vegetables from "../assets/animations/vegetables.json";
 import { Search } from "@element-plus/icons-vue";
 import { ref } from "vue";
-import Categories from "../components/Categories.vue";
-
 const text = ref("");
 </script>
 

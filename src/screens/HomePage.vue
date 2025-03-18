@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { Vue3Lottie } from "vue3-lottie";
 import vegetables from "../assets/animations/vegetables.json";
+import { Search } from "@element-plus/icons-vue";
+import { ref } from "vue";
+
+const text = ref("");
 </script>
 
 <template>
   <div
     style="
-      height: 50%;
+      height: 70%;
       background-color: #f3f4f8;
       display: flex;
       align-items: center;
@@ -24,9 +28,23 @@ import vegetables from "../assets/animations/vegetables.json";
           authenticity in every order.
         </el-text>
       </div>
+      <div style="margin-top: 20px">
+        <el-input
+          v-model="text"
+          :input-style="{
+            fontSize: '16px',
+            fontFamily: 'regular',
+            borderColor: 'white',
+          }"
+          placeholder="Search a food"
+          size="large"
+          type="text"
+          :prefix-icon="Search"
+        />
+      </div>
     </div>
     <div>
-      <Vue3Lottie :animation-data="vegetables" :height="550" :width="550" />
+      <Vue3Lottie :animation-data="vegetables" :height="600" :width="600" />
     </div>
   </div>
 </template>

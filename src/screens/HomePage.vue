@@ -3,6 +3,7 @@ import { Vue3Lottie } from "vue3-lottie";
 import vegetables from "../assets/animations/vegetables.json";
 import { Search } from "@element-plus/icons-vue";
 import { ref } from "vue";
+import Categories from "../components/Categories.vue";
 
 const text = ref("");
 </script>
@@ -40,6 +41,7 @@ const text = ref("");
           size="large"
           type="text"
           :prefix-icon="Search"
+          style="width: 470px"
         />
       </div>
     </div>
@@ -47,6 +49,7 @@ const text = ref("");
       <Vue3Lottie :animation-data="vegetables" :height="600" :width="600" />
     </div>
   </div>
+  <Categories />
 </template>
 
 <style scoped></style>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import logo from "../assets/icon.png";
+import { ref } from "vue";
+
+const cartDrawer = ref(false);
+console.log(cartDrawer);
 </script>
 
 <template>
@@ -25,7 +29,6 @@ import logo from "../assets/icon.png";
           font-size: x-large;
           margin-left: 10px;
           color: #30b9b2;
-          margin-left: 10px;
         "
       >
         HalalExpress
@@ -50,13 +53,34 @@ import logo from "../assets/icon.png";
           font-family: regular;
           color: #30b9b2;
         "
-        >Register</el-button
       >
-      <el-icon style="color: #30b9b2; font-size: 30px; margin-left: 10px"
-        ><ShoppingBag
-      /></el-icon>
+        Register
+      </el-button>
+      <el-icon
+        style="
+          color: #30b9b2;
+          font-size: 30px;
+          margin-left: 50px;
+          cursor: pointer;
+        "
+        @click="cartDrawer = true"
+      >
+        <ShoppingBag />
+      </el-icon>
     </div>
   </div>
-</template>
 
-<style scoped></style>
+  <el-drawer v-model="cartDrawer" :with-header="false">
+    <div
+      style="display: flex; align-items: center; justify-content: space-between"
+    >
+      <el-icon
+        style="color: #30b9b2; font-size: 30px; cursor: pointer"
+        @click="cartDrawer = false"
+      >
+        <CircleCloseFilled />
+      </el-icon>
+      <el-text style="font-family: bold; font-size: 30px"> Your Cart </el-text>
+    </div>
+  </el-drawer>
+</template>

@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Asd: typeof import('./src/components/Categories/asd.vue')['default']
+    CartDrawer: typeof import('./src/components/CartDrawer.vue')['default']
     Categories: typeof import('./src/components/Categories.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
@@ -44,5 +45,8 @@ declare module 'vue' {
     ElText: typeof import('element-plus/es')['ElText']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     NavigationBar: typeof import('./src/components/NavigationBar.vue')['default']
+    Restaurants: typeof import('./src/components/Restaurants.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }

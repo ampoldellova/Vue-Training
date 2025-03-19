@@ -3,6 +3,7 @@ import logo from "../assets/icon.png";
 import { ref } from "vue";
 
 const cartDrawer = ref(false);
+const loginModal = ref(false);
 
 // console.log(cartDrawer.value);
 </script>
@@ -38,6 +39,7 @@ const cartDrawer = ref(false);
 
     <div style="align-items: center; display: flex">
       <el-button
+        @click="loginModal = true"
         style="
           background-color: #30b9b2;
           color: white;
@@ -72,4 +74,5 @@ const cartDrawer = ref(false);
   </div>
 
   <CartDrawer v-model="cartDrawer" />
+  <LoginModal v-model="loginModal" />
 </template>

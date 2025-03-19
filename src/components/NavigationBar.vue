@@ -3,7 +3,8 @@ import logo from "../assets/icon.png";
 import { ref } from "vue";
 
 const cartDrawer = ref(false);
-console.log(cartDrawer);
+
+// console.log(cartDrawer.value);
 </script>
 
 <template>
@@ -70,17 +71,5 @@ console.log(cartDrawer);
     </div>
   </div>
 
-  <el-drawer v-model="cartDrawer" :with-header="false">
-    <div
-      style="display: flex; align-items: center; justify-content: space-between"
-    >
-      <el-icon
-        style="color: #30b9b2; font-size: 30px; cursor: pointer"
-        @click="cartDrawer = false"
-      >
-        <CircleCloseFilled />
-      </el-icon>
-      <el-text style="font-family: bold; font-size: 30px"> Your Cart </el-text>
-    </div>
-  </el-drawer>
+  <CartDrawer v-model="cartDrawer" />
 </template>

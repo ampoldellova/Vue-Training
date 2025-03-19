@@ -4,8 +4,7 @@ import { ref } from "vue";
 
 const cartDrawer = ref(false);
 const loginModal = ref(false);
-
-// console.log(cartDrawer.value);
+const registerModal = ref(false);
 </script>
 
 <template>
@@ -50,6 +49,7 @@ const loginModal = ref(false);
         Login
       </el-button>
       <el-button
+        @click="registerModal = true"
         style="
           border-color: #30b9b2;
           text-transform: none;
@@ -75,4 +75,5 @@ const loginModal = ref(false);
 
   <CartDrawer v-model="cartDrawer" />
   <LoginModal v-model="loginModal" />
+  <RegisterModal v-model="registerModal" />
 </template>

@@ -1,19 +1,15 @@
 <script setup>
-import { ref } from "vue";
-
 const props = defineProps({
-  loginModal: Boolean,
+  registerModal: Boolean,
 });
 
-const emit = defineEmits(["update:loginModal"]);
-const registerModal = ref(false);
+const emit = defineEmits(["update:registerModal"]);
 </script>
 
 <template>
   <el-dialog
-    :model-value="loginModal"
-    title="Welcome!"
-    width="500"
+    :model-value="registerModal"
+    title="Sign Up!"
     align-center
     style="
       font-family: bold;
@@ -22,9 +18,11 @@ const registerModal = ref(false);
       background-color: #f3f4f8;
       border-radius: 20px;
     "
-    @close="emit('update:loginModal', false)"
+    @close="emit('update:registerModal', false)"
   >
-    <el-text style="font-family: regular">Sign Up or Login to continue</el-text>
+    <el-text style="font-family: regular">
+      Register your details to get started
+    </el-text>
 
     <div style="margin-top: 10px; width: 100%; text-align: right">
       <el-text style="font-family: regular; font-size: 14px">
@@ -59,6 +57,65 @@ const registerModal = ref(false);
     </div>
 
     <div style="margin-top: 10px; width: 100%; text-align: right">
+      <el-text style="font-family: regular; font-size: 14px"> Email </el-text>
+    </div>
+    <div
+      style="
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      "
+    >
+      <el-icon
+        style="position: absolute; left: 10px; color: #83829a; font-size: 20px"
+      >
+        <Message />
+      </el-icon>
+
+      <input
+        style="
+          border-width: 0px;
+          height: 50px;
+          width: 100%;
+          font-family: regular;
+          border-radius: 10px;
+          padding-left: 40px;
+        "
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <div style="margin-top: 10px; width: 100%; text-align: right">
+      <el-text style="font-family: regular; font-size: 14px"> Phone </el-text>
+    </div>
+    <div
+      style="
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      "
+    >
+      <el-icon
+        style="position: absolute; left: 10px; color: #83829a; font-size: 20px"
+      >
+        <Phone />
+      </el-icon>
+      <input
+        style="
+          border-width: 0px;
+          height: 50px;
+          width: 100%;
+          font-family: regular;
+          border-radius: 10px;
+          padding-left: 40px;
+        "
+        placeholder="Enter phone number"
+      />
+    </div>
+
+    <div style="margin-top: 10px; width: 100%; text-align: right">
       <el-text style="font-family: regular; font-size: 14px">
         Password
       </el-text>
@@ -76,6 +133,7 @@ const registerModal = ref(false);
       >
         <Lock />
       </el-icon>
+
       <input
         style="
           border-width: 0px;
@@ -85,7 +143,7 @@ const registerModal = ref(false);
           border-radius: 10px;
           padding-left: 40px;
         "
-        placeholder="Enter password"
+        placeholder="Enter your password"
       />
     </div>
 
@@ -99,28 +157,9 @@ const registerModal = ref(false);
         border-radius: 10px;
         height: 50px;
       "
-      >L O G I N</el-button
     >
-    <div style="margin-top: 20px; text-align: center">
-      <el-text style="font-family: regular; color: #83829a; font-size: 14px">
-        Dont have an account?
-      </el-text>
-      <el-text
-        style="
-          font-family: regular;
-          color: #30b9b2;
-          font-size: 14px;
-          cursor: pointer;
-        "
-        @click="
-          registerModal = true;
-          emit('update:loginModal', false);
-        "
-      >
-        Signup
-      </el-text>
-    </div>
-    <RegisterModal v-model="registerModal" />
+      S I G N U P
+    </el-button>
   </el-dialog>
 </template>
 

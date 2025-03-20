@@ -19,22 +19,24 @@ const registerModal = ref(false);
       padding-right: 2%;
     "
   >
-    <div style="display: flex">
-      <el-image
-        style="width: 40px; height: 40px; object-fit: cover"
-        :src="logo"
-      />
-      <el-text
-        style="
-          font-family: bold;
-          font-size: x-large;
-          margin-left: 10px;
-          color: #30b9b2;
-        "
-      >
-        HalalExpress
-      </el-text>
-    </div>
+    <RouterLink to="/">
+      <div style="display: flex">
+        <el-image
+          style="width: 40px; height: 40px; object-fit: cover"
+          :src="logo"
+        />
+        <el-text
+          style="
+            font-family: bold;
+            font-size: x-large;
+            margin-left: 10px;
+            color: #30b9b2;
+          "
+        >
+          HalalExpress
+        </el-text>
+      </div>
+    </RouterLink>
 
     <div style="align-items: center; display: flex">
       <el-button

@@ -9,7 +9,7 @@ const text = ref("");
 <template>
   <div
     style="
-      height: 70%;
+      height: 600px;
       background-color: #f3f4f8;
       display: flex;
       align-items: center;
@@ -48,6 +48,7 @@ const text = ref("");
     </div>
   </div>
   <Categories />
+  <Restaurants />
 </template>
 
 <style scoped></style>

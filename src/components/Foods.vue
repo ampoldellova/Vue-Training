@@ -1,5 +1,19 @@
 <script setup>
+import { ref, computed } from "vue";
 import { foods } from "../assets/data.js";
+
+const currentPage = ref(1);
+const itemsPerPage = ref(6);
+
+const paginatedFoods = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage.value;
+  const end = start + itemsPerPage.value;
+  return foods.slice(start, end);
+});
+
+const handlePageChange = (page) => {
+  currentPage.value = page;
+};
 </script>
 
 <template>
@@ -7,14 +21,14 @@ import { foods } from "../assets/data.js";
     <div
       style="margin-top: 30px; justify-content: space-between; display: flex"
     >
-      <el-text style="font-family: bold; font-size: 30px; color: black"
-        >Available Foods</el-text
-      >
+      <el-text style="font-family: bold; font-size: 30px; color: black">
+        Available Foods
+      </el-text>
       <el-text style="font-size: 30px; cursor: pointer">🍲</el-text>
     </div>
-    <div style="display: flex; justify-content: space-between">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap">
       <div
-        v-for="food in foods"
+        v-for="food in paginatedFoods"
         :key="food._id"
         style="
           margin-top: 20px;
@@ -60,6 +74,25 @@ import { foods } from "../assets/data.js";
         </div>
       </div>
     </div>
+  </div>
+  <div
+    style="
+      justify-content: center;
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    "
+  >
+    <el-pagination
+      size="small"
+      background
+      layout="prev, pager, next"
+      :total="foods.length"
+      :page-size="itemsPerPage"
+      :current-page="currentPage"
+      @current-change="handlePageChange"
+      class="mt-4"
+    />
   </div>
 </template>
 

@@ -49,6 +49,7 @@ const text = ref("");
   </div>
   <Categories />
   <Restaurants />
+  <Foods />
 </template>
 
 <style scoped></style>

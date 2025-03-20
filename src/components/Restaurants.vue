@@ -15,7 +15,6 @@
   </div>
   <div style="display: flex; justify-content: center">
     <el-carousel
-      :interval="4000"
       type="card"
       height="350px"
       style="width: 80%"

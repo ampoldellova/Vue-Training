@@ -14,7 +14,7 @@ const registerModal = ref(false);
       flex-direction: row;
       display: flex;
       align-items: center;
-      height: 7.5%;
+      height: 65px;
       padding-left: 2%;
       padding-right: 2%;
     "

@@ -42,12 +42,8 @@ const handlePageChange = (page) => {
           <div>
             <el-image
               :src="food.imageUrl"
-              style="
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 15px;
-              "
+              style="width: 200px; height: 200px; border-radius: 15px"
+              fit="cover"
             />
           </div>
           <div>

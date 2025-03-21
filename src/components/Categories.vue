@@ -7,18 +7,19 @@
       justify-content: center;
       flex-wrap: wrap;
       text-align: center;
-      cursor: pointer;
     "
   >
-    <div v-for="category in categories" :key="category.id" style="margin: 30px">
-      <!-- Center the image -->
+    <div
+      v-for="category in categories"
+      :key="category.id"
+      style="margin: 30px; cursor: pointer"
+    >
       <div>
         <el-image
           :src="category.imageUrl"
           style="display: block; margin: 0 auto"
         />
       </div>
-      <!-- Center the title -->
       <div>
         <el-text style="margin-top: 10px; display: block; font-family: regular">
           {{ category.title }}
